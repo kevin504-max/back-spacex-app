@@ -41,7 +41,10 @@ const LaunchSchema = new Schema({
         reason: String,
     }],
     details: String,
-    crew: [String],
+    crew: [{
+            crew: String,
+            role: String,
+    }],
     ships: [String],
     capsules: [String],
     payloads: [String],
