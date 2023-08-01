@@ -23,7 +23,7 @@ module.exports = class LaunchController {
         try {
             const launches = await launchService.getLaunches();
             
-            if (! launches) {
+            if (! launches || launches.length === 0) {
                 return response.status(400).json({ message: `Nenhum lançamento encontrado.` });
             } else if (Object.keys(launches).length === 0) {
                 return response.status(204).json({ message: `Nenhum lançamento encontrado.` });
