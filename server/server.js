@@ -3,7 +3,6 @@ const cors = require ('cors')
 const helmet = require ('helmet')
 const compression = require ('compression')
 const cookieParser = require ('cookie-parser')
-
 class ApiServer {
     constructor () {}
 
@@ -24,7 +23,7 @@ class ApiServer {
     }
 
     initialize = async () => {
-        return this.app;
+        return this.restApiConfiguration();
     }
 
     getApplication = () => {
