@@ -52,6 +52,7 @@ module.exports = class LaunchController {
             console.error("Error: ", error);
             response.status(400).json({ message: `Algo deu errado! Tente novamente.` });
         }
+    }
 
     getLaunchesFromJSON = (jsonFile) => {
         return jsonFile.results;
