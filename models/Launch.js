@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
 const LaunchSchema = new Schema({
+    launchId: Number,
     fairings: {
         reused: Boolean,
         recovery_attempt: Boolean,

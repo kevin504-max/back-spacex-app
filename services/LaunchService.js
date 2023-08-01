@@ -26,7 +26,7 @@ module.exports = class LaunchService {
 
     findLaunch = async launchId => {
         try {
-            return await Launch.findOne({ id: launchId });
+            return await Launch.findOne({ launchId: launchId });
         } catch (error) {
             console.log("Error: ", error);
             throw `Error: ${error}`
@@ -62,7 +62,7 @@ module.exports = class LaunchService {
         let firstLaunch = 0;
 
         launches.forEach(async (launch) => {
-            Object.assign(launch, { id: firstLaunch++ });
+            Object.assign(launch, { launchId: firstLaunch++ });
         });
 
         return launches;

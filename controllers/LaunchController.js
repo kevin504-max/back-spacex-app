@@ -39,7 +39,7 @@ module.exports = class LaunchController {
 
     findLaunch = async (request, response) => {
         try {
-            const launch = await launchService.findLaunch(request.params.id);
+            const launch = await launchService.findLaunch(request.params.launchId);
 
             if (! launch) {
                 return response.status(400).json({ message: `Lançamento não encontrado.` });
