@@ -54,6 +54,17 @@ module.exports = class LaunchController {
         }
     }
 
+    getLaunchesData = async (request, response) => {
+        try {
+            const { launchesData, launchesByYear } = await launchService.getLaunchesData();
+
+            return response.status(200).json({ launchesData, launchesByYear });
+        } catch (error) {
+            console.error("Error: ", error);
+            response.status(400).json({ message: `Algo deu errado! Tente novamente.` });
+        }
+    }
+
     getLaunchesFromJSON = (jsonFile) => {
         return jsonFile.results;
     }
