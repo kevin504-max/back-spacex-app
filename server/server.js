@@ -26,6 +26,10 @@ class ApiServer {
     initialize = async () => {
         return this.app;
     }
+
+    getApplication = () => {
+        return this.app;
+    }
 }
 
 module.exports = ApiServer;
