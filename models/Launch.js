@@ -2,7 +2,6 @@ const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
 const LaunchSchema = new Schema({
-    launchId: Number,
     fairings: {
         reused: Boolean,
         recovery_attempt: Boolean,
@@ -40,12 +39,10 @@ const LaunchSchema = new Schema({
         time: Number,
         altitude: Number,
         reason: String,
+        _id: String,
     }],
     details: String,
-    crew: [{
-            crew: String,
-            role: String,
-    }],
+    crew: [],
     ships: [String],
     capsules: [String],
     payloads: [String],

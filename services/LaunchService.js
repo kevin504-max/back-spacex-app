@@ -6,9 +6,8 @@ module.exports = class LaunchService {
     registerLaunches = async params => {
         try {
             const { launches } = params;
-            const launchesToRegister = this.setLaunchesId(launches);
 
-            return await Launch.create(launchesToRegister);
+            return await Launch.create(launches);
         } catch (error) {
             console.log("Error: ", error);
             throw `Error: ${error}`
@@ -26,7 +25,7 @@ module.exports = class LaunchService {
 
     findLaunch = async launchId => {
         try {
-            return await Launch.findOne({ launchId: launchId });
+            return await Launch.findOne({ id: launchId });
         } catch (error) {
             console.log("Error: ", error);
             throw `Error: ${error}`
@@ -56,15 +55,5 @@ module.exports = class LaunchService {
             console.log("Error: ", error);
             throw `Error: ${error}`
         }
-    }
-
-    setLaunchesId (launches) {
-        let firstLaunch = 0;
-
-        launches.forEach(async (launch) => {
-            Object.assign(launch, { launchId: firstLaunch++ });
-        });
-
-        return launches;
     }   
 }

@@ -39,7 +39,7 @@ module.exports = class LaunchController {
 
     findLaunch = async (request, response) => {
         try {
-            const launch = await launchService.findLaunch(request.params.launchId);
+            const launch = await launchService.findLaunch(request.params.id);
 
             if (! launch) {
                 return response.status(400).json({ message: `Lançamento não encontrado.` });
@@ -71,7 +71,7 @@ module.exports = class LaunchController {
 
     verifyLaunchesRegistered(launchesRegistered) {
         if (launchesRegistered.length > 0) {
-            return 'O arquivo já foi importado anteriormente.';
+            throw 'O arquivo já foi importado anteriormente.';
         } 
     }
 }
