@@ -7,12 +7,12 @@ The following tools were used in the construction of the project:
 - [Node.js](https://nodejs.org/en/)
 - [Express](https://expressjs.com/)
 - [GitFlow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow)
-- [MongoDB] 
+- [MongoDB](https://www.mongodb.com/)
 
 ### Prerequisites
 
 Before you start, you will need to have the following tools installed on your machine:
-[Git](https://git-scm.com), [Node.js](https://nodejs.org/en/), [MongoDB](https://www.postgresql.org/).
+[Git](https://git-scm.com), [Node.js](https://nodejs.org/en/), [MongoDB](https://www.mongodb.com/).
 Also, it is good to have an editor to work with the code, such as [VSCode](https://code.visualstudio.com/).
 
 You will need to clone the project to your local machine, running:
