@@ -1,4 +1,4 @@
-require("dotenv").config();
+const env = require('../.env')
 const mongoose = require('mongoose')
 
 async function connect() {
@@ -6,7 +6,7 @@ async function connect() {
         mongoose.set('strictQuery', true);
 
         await mongoose.connect(`
-            mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@cluster0.aai6u7s.mongodb.net/
+            mongodb+srv://${env.dbUser}:${env.dbPassword}@cluster0.aai6u7s.mongodb.net/
         `, {
             useNewUrlParser: true,
             useUnifiedTopology: true,
