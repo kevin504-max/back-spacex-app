@@ -5,9 +5,9 @@ async function connect() {
     try {
         mongoose.set('strictQuery', true);
 
-        await mongoose.connect(`
-            mongodb+srv://${env.dbUser}:${env.dbPassword}@cluster0.aai6u7s.mongodb.net/
-        `);
+        await mongoose.connect(
+            `mongodb+srv://${env.dbUser}:${env.dbPassword}@cluster0.aai6u7s.mongodb.net/`
+        );
 
         console.log('Conexão com o banco de dados efetuado com sucesso!');
     } catch (error) {
