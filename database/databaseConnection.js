@@ -7,10 +7,7 @@ async function connect() {
 
         await mongoose.connect(`
             mongodb+srv://${env.dbUser}:${env.dbPassword}@cluster0.aai6u7s.mongodb.net/
-        `, {
-            useNewUrlParser: true,
-            useUnifiedTopology: true,
-        });
+        `);
 
         console.log('Conexão com o banco de dados efetuado com sucesso!');
     } catch (error) {
